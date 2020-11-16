@@ -42,7 +42,6 @@ in
     clang_9 # current latest clang
     expect
     flex
-    ghc
     go
     guile
     help2man
