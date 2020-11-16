@@ -1,5 +1,8 @@
 { nixpkgs }:
-
+let
+  nixpkgs= fetchgit { 
+    url = "https://github.com/nixos/nixpkgs"; rev = "9f9134c";
+  };
 let
   pkgs = import nixpkgs {
     system = "armv7l-linux";
