@@ -15,7 +15,6 @@ in
 
   inherit (pkgs)
     # essentials
-    ghc
     bash
     binutils
     busybox
@@ -109,7 +108,6 @@ in
     readline
 
     # nix specific tooling
-    cachix
     lorri
     nix-diff
     ;
