@@ -1,4 +1,3 @@
-{ nixpkgs }:
 let
   nixpkgs= builtins.fetchgit { 
     url = "https://github.com/nixos/nixpkgs";
