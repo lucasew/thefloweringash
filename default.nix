@@ -15,6 +15,7 @@ in
 
   inherit (pkgs)
     # essentials
+    ghc
     bash
     binutils
     busybox
@@ -106,10 +107,6 @@ in
     pango
     pcre
     readline
-
-    # kernels
-    linux
-    linux_latest
 
     # nix specific tooling
     cachix
