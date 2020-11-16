@@ -1,5 +1,5 @@
 let
-  nixpkgs= buildins.fetchgit { 
+  nixpkgs= builtins.fetchgit { 
     url = "https://github.com/nixos/nixpkgs";
     rev = "9f9134c";
   };
