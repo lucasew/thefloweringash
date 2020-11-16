@@ -29,5 +29,5 @@ jobs:
           name: fuseteam
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
-      - run: nix-build
+      - run: nix-build default.nix
       - run: nix-shell --run "echo OK"
