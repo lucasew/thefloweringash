@@ -27,7 +27,7 @@ jobs:
       - uses: cachix/cachix-action@v8
         with:
           name: arm64
-          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+          authToken: '${{ secrets.ARM64 }}'
 
       - run: nix-build arm64.nix
       - run: nix-shell --run "echo OK"
