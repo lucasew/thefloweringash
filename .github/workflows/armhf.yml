@@ -27,7 +27,7 @@ jobs:
       - uses: cachix/cachix-action@v8
         with:
           name: armhf
-          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+          authToken: '${{ secrets.ARMHF }}'
 
       - run: nix-build default.nix
       - run: nix-shell --run "echo OK"
