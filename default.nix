@@ -1,9 +1,5 @@
 let
-  ghc8102 = callPackage ../development/compilers/ghc/8.10.2.nix {
-    bootPkgs = packages.ghc8102Binary;
-  };
-
-  nixpkgs= builtins.fetchGit { 
+   nixpkgs= builtins.fetchGit { 
     url = "https://github.com/nixos/nixpkgs";
     rev = "474c2d4c09b254c22e0d668c40b2caa679cf8852";
   };
