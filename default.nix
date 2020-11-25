@@ -1,7 +1,7 @@
 let
    nixpkgs= builtins.fetchGit { 
     url = "https://github.com/Fuseteam/nixpkgs";
-    rev = "3ebd278b2eb63c916d8569df0cd604faa34a0ee3";
+    rev = "31870ff0abe0fc394eaeb374efcdc061cc30aff2";
   };
   pkgs = import nixpkgs {
     system = "armv7l-linux";
