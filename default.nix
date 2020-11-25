@@ -4,7 +4,7 @@ let
     rev = "31870ff0abe0fc394eaeb374efcdc061cc30aff2";
   };
   pkgs = import nixpkgs {
-    system = "armv7l-linux";
+    system = "x86_64-linux";
   };
 in
 {
