@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: armhf
+name: arm-crosscompilation
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -29,5 +29,5 @@ jobs:
           name: armhf
           authToken: '${{ secrets.ARMHF }}'
 
-      - run: nix-build default.nix
+      - run: nix-build default.nix --arg systems '["armv7l-linux"]'
       - run: nix-shell --run "echo OK"
