@@ -29,7 +29,7 @@ jobs:
           name: armhf
           authToken: '${{ secrets.ARMHF }}'
 
-      - run: nix-build default.nix --arg systems '["armv7l-linux"]'
+      - run: nix-build default.nix --arg systems '["armv7l-linux"]'|cachix push armhf
         
   build-arm64:
     # The type of runner that the job will run on
@@ -47,4 +47,4 @@ jobs:
           name: arm64
           authToken: '${{ secrets.ARM64 }}'
 
-      - run: nix-build default.nix --arg systems '["aarch64-linux"]'
+      - run: nix-build default.nix --arg systems '["aarch64-linux"]'|cachix push arm64
