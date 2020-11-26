@@ -47,4 +47,4 @@ jobs:
           name: arm64
           authToken: '${{ secrets.ARM64 }}'
 
-      - run: "nix-build default.nix --arg systems '["aarch64-linux"]'|cachix push arm64"
+      - run: "nix-build default.nix --arg systems '[\"aarch64-linux\"]' | cachix push arm64"
