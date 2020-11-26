@@ -4,7 +4,11 @@ let
     rev = "40c44fdd019cb96f2989818516a2aed4cb7e3464";
   };
   pkgs = import nixpkgs {
-    system = "x86_64-linux";
+    systems = [
+       "x86_64-linux"
+       "armv7l-linux"
+       "aarch64-linux"
+    ];
   };
 in
 {
@@ -15,7 +19,6 @@ in
 
   inherit (pkgs)
     # essentials
-    ghc
     bash
     binutils
     busybox
@@ -43,6 +46,7 @@ in
     clang_9 # current latest clang
     expect
     flex
+    ghc
     go
     guile
     help2man
@@ -105,7 +109,7 @@ in
     pango
     pcre
     readline
-    
+
     # kernels
     linux
     linux_latest
