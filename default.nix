@@ -71,7 +71,6 @@ in
     gdb
     git
     gnupg
-    mtdutils
     ncdu
     neofetch
     pandoc
