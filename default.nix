@@ -12,7 +12,7 @@ in pkgsCross.stdenv.mkDerivation {
    installPhase = ''
       touch $out
    '';
-   buildInputs =  with pkgs; [
+   buildInputs =  with pkgsCross; [
        # essentials
        bash
        binutils
