@@ -11,7 +11,7 @@ let
     };
   pkgs = import nixpkgs {
     overlays = [(self: super: {
-      inherit (pkgsArm) llvmPackages_7;
+      inherit (pkgsArm) llvmPackages_7 llvmPackages_9;
     })];
     crossSystem = {
       config = targetTriple;
