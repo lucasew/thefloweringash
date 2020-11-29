@@ -4,9 +4,9 @@ let
     url = "https://github.com/NixOS/nixpkgs/archive/a86b1f48bf373706e5ef50547ceeaeaec9ee7d34.tar.gz";
     sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
   };
-  pkgs = import nixpkgs {};
-in pkgs.pkgsCross.${target}.callPackage (
-{pkgs}: pkgs.stdenv.mkDerivation {
+  pkgsOriginal = import nixpkgs {};
+  pkgsCross = pkgsOriginal.pkgsCross.${target};
+in pkgsCross.stdenv.mkDerivation {
    name = "packages";
    src = ./.;
    installPhase = ''
