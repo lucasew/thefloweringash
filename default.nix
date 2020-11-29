@@ -5,7 +5,6 @@ let
     sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
   };
   pkgs = import nixpkgs {};
-};
 in pkgs.stdenv.mkDerivation {
    name = "packages";
    src = ./.;
