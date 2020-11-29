@@ -114,4 +114,4 @@ in pkgs.pkgsCross.${target}.callPackage (
        lorri
        nix-diff
      ];
-})
+}) {}
