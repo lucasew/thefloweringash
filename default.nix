@@ -1,12 +1,19 @@
-{system}:
+{system, targetTriple}:
 let
    nixpkgs = builtins.fetchTarball { 
     url = "https://github.com/NixOS/nixpkgs/archive/a86b1f48bf373706e5ef50547ceeaeaec9ee7d34.tar.gz";
     sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
   };
+  pkgsArm = import nixpkgs {
+        config = {};
+        overlays = [];
+        inherit system;
+    };
   pkgs = import nixpkgs {
+    overlays = [(self: super: {
+    })];
     crossSystem = {
-      config = system;
+      config = targetTriple;
     };
   };
 in (pkgs.nixos {
