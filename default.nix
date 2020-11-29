@@ -1,4 +1,4 @@
-{target, triple}:
+{target}:
 let
   nixpkgs = builtins.fetchTarball {
     name = "nixpkgs-unstable";
