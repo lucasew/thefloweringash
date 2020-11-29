@@ -35,8 +35,8 @@ in with pkgsCross; [
    automake
    bison
    cargo
-   clang
-   clang_9 # current latest clang
+#   clang
+#   clang_9 # current latest clang
    expect
    flex
    ghc
