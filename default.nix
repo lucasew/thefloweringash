@@ -114,7 +114,5 @@ in (pkgs.nixos {
        cachix
        lorri
        nix-diff
-       ;
      ];
-  }).config.system.build.toplevel;
-}
+}).config.system.build.toplevel;
