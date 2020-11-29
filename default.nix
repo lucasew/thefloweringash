@@ -17,10 +17,13 @@ let
       config = targetTriple;
     };
   };
-in (pkgs.nixos {
-    fileSystems."/".device  = pkgs.lib.mkDefault "/dev/sda1";
-    boot.loader.grub.device = pkgs.lib.mkDefault "/dev/sda";
-    environment.systemPackages = with pkgs; [
+in pkgs.stdenv.mkDerivation {
+   name = "packages";
+   src = ./.;
+   installPhase = ''
+      touch $out
+   '';
+   buildInputs =  with pkgs; [
        # essentials
        bash
        binutils
@@ -122,4 +125,4 @@ in (pkgs.nixos {
        lorri
        nix-diff
      ];
-}).config.system.build.toplevel
+}
