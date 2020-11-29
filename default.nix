@@ -1,29 +1,18 @@
-{system, targetTriple}:
+{target}:
 let
    nixpkgs = builtins.fetchTarball { 
     url = "https://github.com/NixOS/nixpkgs/archive/a86b1f48bf373706e5ef50547ceeaeaec9ee7d34.tar.gz";
     sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
   };
-  pkgsArm = import nixpkgs {
-        config = {};
-        overlays = [];
-        inherit system;
-    };
-  pkgs = import nixpkgs {
-    overlays = [(self: super: {
-      inherit (pkgsArm) llvmPackages_7 llvmPackages_9;
-    })];
-    crossSystem = {
-      config = targetTriple;
-    };
-  };
+  pkgs = import nixpkgs {};
+};
 in pkgs.stdenv.mkDerivation {
    name = "packages";
    src = ./.;
    installPhase = ''
       touch $out
    '';
-   buildInputs =  with pkgs; [
+   buildInputs =  with pkgs.pkgsCross.${target}; [
        # essentials
        bash
        binutils
