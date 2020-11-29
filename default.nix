@@ -1,8 +1,9 @@
 {target}:
 let
-   nixpkgs = builtins.fetchTarball { 
-    url = "https://github.com/NixOS/nixpkgs/archive/a86b1f48bf373706e5ef50547ceeaeaec9ee7d34.tar.gz";
-    sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
+  nixpkgs = builtins.fetchTarball {
+    name = "nixpkgs-unstable";
+    url = "https://github.com/NixOS/nixpkgs/archive/4f3475b113c93d204992838aecafa89b1b3ccfde.tar.gz";
+    sha256 = "158iik656ds6i6pc672w54cnph4d44d0a218dkq6npzrbhd3vvbg";
   };
   pkgsOriginal = import nixpkgs {};
   pkgsCross = pkgsOriginal.pkgsCross.${target};
