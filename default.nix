@@ -114,4 +114,4 @@ in pkgsCross.stdenv.mkDerivation {
        lorri
        nix-diff
      ];
-}) {}
+}
