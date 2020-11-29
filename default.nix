@@ -115,4 +115,4 @@ in (pkgs.nixos {
        lorri
        nix-diff
      ];
-}).config.system.build.toplevel;
+}).config.system.build.toplevel
