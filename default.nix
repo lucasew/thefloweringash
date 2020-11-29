@@ -1,7 +1,7 @@
 let
-   nixpkgs= builtins.fetchGit { 
-    url = "https://github.com/Fuseteam/nixpkgs";
-    rev = "40c44fdd019cb96f2989818516a2aed4cb7e3464";
+   nixpkgs = builtins.fetchTarball { 
+    url = "https://github.com/Fuseteam/nixpkgs/archive/40c44fdd019cb96f2989818516a2aed4cb7e3464.tar.gz";
+    sha256 = "1rv51fmxyl0j40axdlcv47spp4yxv43yvrz0kdn8jklaiwycwl7x";
   };
   pkgs = import nixpkgs {
     systems = [
