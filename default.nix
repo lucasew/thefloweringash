@@ -5,7 +5,13 @@ let
     url = "https://github.com/NixOS/nixpkgs/archive/4f3475b113c93d204992838aecafa89b1b3ccfde.tar.gz";
     sha256 = "158iik656ds6i6pc672w54cnph4d44d0a218dkq6npzrbhd3vvbg";
   };
-  pkgsOriginal = import nixpkgs {};
+  pkgsOriginal = import nixpkgs {
+    overlays = [
+      (self: super: {
+        inherit (self) llvmPackages_7
+      })
+    ];
+  };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
 in with pkgsCross; [
    # essentials
