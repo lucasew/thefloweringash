@@ -1,14 +1,13 @@
+{system}:
 let
    nixpkgs = builtins.fetchTarball { 
     url = "https://github.com/Fuseteam/nixpkgs/archive/40c44fdd019cb96f2989818516a2aed4cb7e3464.tar.gz";
     sha256 = "1rv51fmxyl0j40axdlcv47spp4yxv43yvrz0kdn8jklaiwycwl7x";
   };
   pkgs = import nixpkgs {
-    systems = [
-       "x86_64-linux"
-       "armv7l-linux"
-       "aarch64-linux"
-    ];
+    crossSystem = {
+      config = system;
+    };
   };
 in (pkgs.nixos {
     fileSystems."/".device  = pkgs.lib.mkDefault "/dev/sda1";
