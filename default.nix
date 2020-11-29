@@ -1,8 +1,8 @@
 {system}:
 let
    nixpkgs = builtins.fetchTarball { 
-    url = "https://github.com/Fuseteam/nixpkgs/archive/40c44fdd019cb96f2989818516a2aed4cb7e3464.tar.gz";
-    sha256 = "1rv51fmxyl0j40axdlcv47spp4yxv43yvrz0kdn8jklaiwycwl7x";
+    url = "https://github.com/NixOS/nixpkgs/archive/a86b1f48bf373706e5ef50547ceeaeaec9ee7d34.tar.gz";
+    sha256 = "1bg2jlsxb7l8ha6gkb82g8s6hrbly4mkm4xk2dq7wbn3lagz2pp6";
   };
   pkgs = import nixpkgs {
     crossSystem = {
