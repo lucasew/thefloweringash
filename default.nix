@@ -7,9 +7,6 @@ let
   };
   pkgsOriginal = import nixpkgs {
     overlays = [
-      (self: super: {
-        inherit (self) llvmPackages_7;
-      })
     ];
   };
   pkgsCross = pkgsOriginal.pkgsCross.${target};
