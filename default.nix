@@ -8,7 +8,7 @@ let
   pkgsOriginal = import nixpkgs {
     overlays = [
       (self: super: {
-        inherit (self) llvmPackages_7
+        inherit (self) llvmPackages_7;
       })
     ];
   };
