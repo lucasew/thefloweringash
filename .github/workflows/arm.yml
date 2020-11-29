@@ -34,5 +34,5 @@ jobs:
         with:
           name: poc
           authToken: '${{ secrets.CACHIX_TOKEN }}'
-      - run: nix-build default.nix --arg system '[ "${{ matrix.arch }}" ]'
+      - run: nix-build default.nix --arg system "${{ matrix.arch }}"
 
