@@ -16,10 +16,12 @@ jobs:
   build-for-arch:
     strategy:
       matrix:
-        arch:
-          - armv7l-unknown-linux-gnueabihf
-          - aarch64-unknown-linux-gnu
-      
+        system: [armv7l-linux, aarch64-linux]
+        include:
+          - system: armv7l-linux
+            targetTriple: armv7l-unknown-linux-gnueabihf
+          - system: aarch64-linux
+            targetTriple: aarch64-unknown-linux-gnu      
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,5 +36,5 @@ jobs:
         with:
           name: poc
           authToken: '${{ secrets.CACHIX_TOKEN }}'
-      - run: nix-build default.nix --arg system '"${{ matrix.arch }}"'
+      - run: nix-build default.nix --argstr system "${{ matrix.system }}" --argstr targetTriple "${{ matrix.targetTriple }}"
 
