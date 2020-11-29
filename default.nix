@@ -7,7 +7,7 @@ let
   };
   pkgsOriginal = import nixpkgs {};
   pkgsCross = pkgsOriginal.pkgsCross.${target};
-in map (pkg: "${pkg}") (with pkgsCross; [
+in with pkgsCross; [
    # essentials
    bash
    binutils
@@ -108,4 +108,4 @@ in map (pkg: "${pkg}") (with pkgsCross; [
    cachix
    lorri
    nix-diff
-])
+]
