@@ -31,5 +31,5 @@ jobs:
         with:
           name: poc
           authToken: '${{ secrets.CACHIX_TOKEN }}'
-      - run: nix-build default.nix --argstr target "${{ matrix.target }}" --show-trace
+      - run: nix-build default.nix --argstr target "${{ matrix.target }}" --show-trace --keep-going
 
