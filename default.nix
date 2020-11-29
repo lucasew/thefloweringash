@@ -5,13 +5,14 @@ let
     sha256 = "1anzjsvldr4zhvy6iym9asx6m4vlx9wximx1ar4jvav31g9h1yr3";
   };
   pkgs = import nixpkgs {};
-in pkgs.stdenv.mkDerivation {
+in pkgs.pkgsCross.${target}.callPackage (
+{pkgs}: pkgs.stdenv.mkDerivation {
    name = "packages";
    src = ./.;
    installPhase = ''
       touch $out
    '';
-   buildInputs =  with pkgs.pkgsCross.${target}; [
+   buildInputs =  with pkgs; [
        # essentials
        bash
        binutils
@@ -113,4 +114,4 @@ in pkgs.stdenv.mkDerivation {
        lorri
        nix-diff
      ];
-}
+})
